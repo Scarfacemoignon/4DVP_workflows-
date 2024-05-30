@@ -1,0 +1,38 @@
+name: Testing phase
+
+on:
+  push:
+
+jobs:
+   testing_phase:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Checkout code
+       uses: actions/checkout@v3
+       with:
+         ref: '3.1.0'
+         repository: 'tldr-pages/tldr-python-client'
+
+     - name: Setup Python 3.10
+       uses: actions/setup-python@v3
+       with:
+         python-version: '3.10'
+
+     - name: Install dependencies
+       run: pip install -r requirements.txt
+
+     - name: Install pytest
+       run: pip install pytest
+
+     - name: Run tests
+       run: pytest
+
+     - name: Check test status
+       run: |
+         if [ $? -eq 0 ]; then
+           echo "Tests passed successfully!"
+         else
+           echo "Tests failed!"
+           exit 1
+         fi
+
