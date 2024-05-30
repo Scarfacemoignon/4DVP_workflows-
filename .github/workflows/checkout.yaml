@@ -1,0 +1,14 @@
+name: build_and_publish
+
+on:
+  push:
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v3
+
+      - name: Display readme.md
+        run: cat Readme.md
