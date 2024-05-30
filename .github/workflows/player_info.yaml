@@ -1,0 +1,28 @@
+name: Player Info
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Username of the player'
+        required: true
+        type: string
+      level:
+        description: 'Level of the player'
+        required: true
+        type: string
+      class:
+        description: 'Class of the player'
+        required: true
+        type: choice
+        options:
+          - jedi
+          - sith
+          - rebel
+
+jobs:
+  player_infos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Player Info
+        run: echo "Le joueur ${{ github.event.inputs.username }} est de niveau ${{ github.event.inputs.level }} et joue un ${{ github.event.inputs.class }}."

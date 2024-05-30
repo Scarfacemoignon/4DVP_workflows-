@@ -1,20 +1,20 @@
-#name: version_python
-#
-#on:
-#  push:
-#
-#jobs:
-#    version_python:
-#        strategy:
-#            matrix:
-#                version: ["3.8", "3.9", "3.10"]
-#        runs-on: ubuntu-latest
-#        steps:
-#            - name: version_python
-#              uses: actions/setup-python@v3
-#              with:
-#                python-version: ${{ matrix.version }}
-#
-#            - name: display Python versionn
-#              run: |
-#                python --version
+name: version_python
+
+on:
+  push:
+
+jobs:
+    version_python:
+        strategy:
+            matrix:
+                version: ["3.8", "3.9", "3.10"]
+        runs-on: ubuntu-latest
+        steps:
+            - name: version_python
+              uses: actions/setup-python@v3
+              with:
+                python-version: ${{ matrix.version }}
+
+            - name: display Python versionn
+              run: |
+                python --version
