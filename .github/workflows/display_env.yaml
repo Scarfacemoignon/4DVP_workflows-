@@ -1,16 +1,16 @@
-name: "Gestion d'environement"
-
-on:
-  push:
-
-env:
-  MESSAGE: Ceci est une variable d'environnement
-
-jobs:
-  display_env:
-    name: "display_env"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "display_env"
-        run: |
-          echo "Le contenue de la variable d'environement est : ${{ env.MESSAGE }}."
+#name: "Gestion d'environement"
+#
+#on:
+#  push:
+#
+#env:
+#  MESSAGE: Ceci est une variable d'environnement
+#
+#jobs:
+#  display_env:
+#    name: "display_env"
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: "display_env"
+#        run: |
+#          echo "Le contenue de la variable d'environement est : ${{ env.MESSAGE }}."
