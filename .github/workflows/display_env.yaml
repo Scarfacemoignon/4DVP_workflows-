@@ -12,4 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "display_env"
-        run: echo "Le contenue de la variable d'environement ${{ env.MESSAGE }}."
+        run: |
+          echo "Le contenue de la variable d'environement est : ${{ env.MESSAGE }}."
