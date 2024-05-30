@@ -1,10 +1,10 @@
-name: build_and_publish
+name: Display Readme
 
 on:
   push:
 
 jobs:
-  build_and_publish:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - name: checkout source
