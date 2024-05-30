@@ -1,0 +1,22 @@
+name: Execute script demo
+
+on:
+  push:
+
+jobs:
+   execute_script:
+     strategy:
+       matrix:
+         version: [ "3.10" ]
+     runs-on: ubuntu-latest
+     steps:
+      - name: checkout source
+        uses: actions/checkout@v3
+
+      - name: Select version
+        uses: actions/setup_python@v3
+        with:
+          python-version: ${{ matrix.version }}
+
+      - name: Execute script
+        run: ./demo.py
