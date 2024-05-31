@@ -4,14 +4,16 @@ on:
   push:
 
 jobs:
-   information_display:
-     runs-on: ubuntu-latest
-     steps:
-     - name: display notice
-       run: "::Notice::Ceci est une notice."
+  information_display:
+    runs-on: ubuntu-latest
 
-     - name: display warning
-       run: "::Warning::Ceci est un avertissement."
+    steps:
+    - name: Affichage d'une notice
+      run: echo "Ceci est une notice."
 
-     - name: display error
-       run: "::Error::Une erreur est survenue."
+    - name: Affichage d'un avertissement
+      run: echo "Ceci est un avertissement."
+      continue-on-error: true
+
+    - name: Affichage d'une erreur
+      run: echo "Une erreur est survenue." && exit 1
