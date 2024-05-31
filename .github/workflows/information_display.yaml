@@ -1,0 +1,17 @@
+name: information display
+
+on:
+  push:
+
+jobs:
+   information_display:
+     runs-on: ubuntu-latest
+     steps:
+     - name: display notice
+       run: "::Notice::Ceci est une notice."
+
+     - name: display warning
+       run: "::Warning::Ceci est un avertissement."
+
+     - name: display error
+       run: "::Error::Une erreur est survenue."
